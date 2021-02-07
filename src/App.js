@@ -33,9 +33,12 @@ class App extends Component {
         </div>
         {(subscribers && subscribers.length > 0) && subscribers.map(sub => {
           return (
-            <div className="infoWrapper" key={sub.id}>
-              <div>{sub.name}</div>
-              <div>{sub.phone}</div>
+            <div className="grid-container">
+              <div className="infoWrapper" key={sub.id}>
+                <div>{sub.name}</div>
+                <div>{sub.phone}</div>
+              </div>
+              <button className="deleteBtn">Delete</button>
             </div>
           )})}
       </div>

@@ -18,7 +18,7 @@
     text-transform: uppercase;
 }
 .infoWrapper {
-    width: 99%;
+    width: 80%;
     margin: 20px;
     display: flex;
     justify-content: row;
@@ -30,4 +30,17 @@
 .infoWrapper > span {
     width: 50%;
     font-weight: bold;
+}
+.grid-container {
+    display: flex;
+    justify-content: row;
+}
+.deleteBtn {
+    margin: 20px 0 10px 20px;
+    width: 5%;
+    padding: 10px;
+    background: #F08080;
+    color: #000000;
+    border: none;
+    text-transform: uppercase;
 }
