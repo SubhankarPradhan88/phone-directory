@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
 
-export const Header = function() {
+export const Header = function(props) {
     return (
-        <div className="header">
-          Phone Directory
-        </div>
+        <div className="header">{props.heading}</div>
     )
 }
 
