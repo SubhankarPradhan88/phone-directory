@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import Header from './Header';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
   render() {
     // Subscribers data list
     let subscribers = [
@@ -26,12 +32,14 @@ class App extends Component {
     return (
       <div className="container">
         <Header heading="Phone Directory"/>
-        <button className="add-btn">Add</button>
+        <div className="component-body-container">
+          <button className="custom-btn add-btn">Add</button>
+        </div>
         <div className="infoWrapper">
           <span>Name</span> 
           <span>Phone</span>
         </div>
-        {(subscribers && subscribers.length > 0) && subscribers.map(sub => {
+        {(this.state.subscribersListToShow && this.state.subscribersListToShow.length > 0) && this.state.subscribersListToShow.map(sub => {
           return (
             <div className="grid-container">
               <div className="infoWrapper" key={sub.id}>
