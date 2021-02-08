@@ -18,3 +18,10 @@
     background: #7ab97a;
     color: #fff;
 }
+.header {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
