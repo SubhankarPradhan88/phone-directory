@@ -8,6 +8,9 @@ class ShowSubscribers extends React.Component {
   constructor(props) {
     super(props);
   }
+  onDeletedClick = (subscriberId) => {
+    this.props.deleteSubcriberHandler(subscriberId);
+  }
   render() {
     // Subscribers data list
     return (
@@ -29,7 +32,7 @@ class ShowSubscribers extends React.Component {
                 <div>{sub.name}</div>
                 <div>{sub.phone}</div>
               </div>
-              <button className="deleteBtn">Delete</button>
+              <button className="deleteBtn" onClick={this.onDeletedClick.bind(this, sub.id)}>Delete</button>
             </div>
           )})}
       </div>

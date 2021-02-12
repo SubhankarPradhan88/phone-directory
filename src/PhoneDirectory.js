@@ -30,11 +30,24 @@ class PhoneDirectory extends React.Component {
         subscribersList.push(newSubscriber);
         this.setState({subscribersList});
     }
+    deleteSubcriberHandler = (subscriberId) => {
+        let subscribersList = this.state.subscribersList;
+        let subscriberIndex = 0;
+        subscribersList.forEach((subscriber, index) => {
+            if(subscriber.id === subscriberId) {
+                subscriberIndex = index;
+            }
+        }, this);
+        let newSubscribers = subscribersList;
+        newSubscribers.splice(subscriberIndex, 1);
+        this.setState({subscribersList: newSubscribers});
+    }
+
     render() {
         return(
             <Router>
                 <div className="main-container">
-                    <Route exact path='/' render={(props) => <ShowSubscribers {...props} subscribersList={this.state.subscribersList} />} />
+                    <Route exact path='/' render={(props) => <ShowSubscribers {...props} subscribersList={this.state.subscribersList} deleteSubcriberHandler={this.deleteSubcriberHandler} />} />
                     <Route exact path='/add' render={({history}, props) => <AddSubscriber history={history} {...props} addSubscriberHandler={this.addSubscriberHandler} />} />
                 </div>
             </Router>
